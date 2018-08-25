@@ -1,0 +1,94 @@
+
+a:hover {
+    text-decoration: none;
+}
+
+
+.menu-item {
+    margin: 0 2vw;
+    color: crimson!important;
+}
+
+.menu-link {
+    color: crimson!important;
+    font-size: 1.3em;
+    font-weight: 600;
+    transition: hover .8s ease-out;
+}
+
+.menu-link:hover {
+    color:goldenrod!important;
+}
+
+.custom-brand {
+    animation-name:pulse;
+    animation-duration:10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse{
+    5%{transform: scale(1.1);}
+    10%{transform: scale(1);}
+    15%{transform: scale(1.1);}
+    20%{transform: scale(1.1);}
+    25%{transform: scale(1);}
+    30%{transform: scale(1.1);}
+    35%{transform: scale(1);}
+    40%{transform: scale(1.1);}
+    45%{transform: scale(1);}
+    50%{transform: scale(1.1);}
+    55%{transform: scale(1);}
+    60%{transform: rotate(20deg);}
+    65%{transform: rotate(-20deg);}
+    70%{transform: rotate(20deg);}
+    75%{transform: rotate(-20deg);}
+    80%{transform: rotate(20deg);}
+    85%{transform: rotate(-20deg);}
+    90%{transform: rotate(0deg);}
+    95%{transform: scale(1.1);}
+    100%{transform: scale(1);}
+}
+
+.header-screen-wrapper {
+    background-position: center 0;
+    background-image: url('../Images/main-image.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 88.5vh;
+    width: 100vw;
+    position: relative;
+    padding-top:100px;
+    padding-bottom:40px;
+}
+
+.header-center-block {
+    display:inline-block;
+    position:relative!important;
+    background-color: rgba(50, 46, 41, 0.6);
+    height: auto;
+    color:whitesmoke;
+    font-size: 1.8em;
+    font-family: "Century Gothic";
+}
+
+.login-box {
+    margin-top: 100px;
+}
+
+
+.form-field {
+    margin-top: 10px;
+}
+
+.validation-error {
+    color:cyan;
+}
+
+.user-box {
+    border: 5px solid yellow;
+}
+
+.admin-box {
+    color: crimson;
+    border: 5px solid crimson;
+}
