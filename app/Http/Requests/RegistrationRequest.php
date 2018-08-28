@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
@@ -35,7 +36,7 @@ class RegistrationRequest extends FormRequest
             'surname' => 'required|string|min:1|max:20',
             'password' => 'required|min:3',
             'email' => 'required|unique:users,email',
-            'dateOfBirth' => 'required|date',
+            'dateOfBirth' => 'required|date|before:' . Carbon::now()->format('Y:m:d'),
         ];
     }
 }

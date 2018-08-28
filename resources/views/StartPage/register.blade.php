@@ -18,3 +18,16 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+    <script>
+        $(function() {
+            $(".date").datepicker({
+                dateFormat: "yy-mm-dd",
+                showOn: "focus",
+                buttonText: "Select date",
+                locale: "en",
+            });
+        });
+    </script>
+@endsection

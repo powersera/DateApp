@@ -92,3 +92,7 @@ a:hover {
     color: crimson;
     border: 5px solid crimson;
 }
+
+.date {
+    cursor: pointer;
+}
