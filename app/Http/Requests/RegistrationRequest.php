@@ -36,7 +36,7 @@ class RegistrationRequest extends FormRequest
             'surname' => 'required|string|min:1|max:20',
             'password' => 'required|min:3',
             'email' => 'required|unique:users,email',
-            'dateOfBirth' => 'required|date|before:' . Carbon::now()->format('Y:m:d'),
+            'dateOfBirth' => 'required|date_format:Y-m-d|before:' . Carbon::now()->format('Y-m-d'),
         ];
     }
 }

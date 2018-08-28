@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Exceptions\UnknownRoleException;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -18,6 +20,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
+    const ROLE_USER = 'user';
+    const ROLE_ADMIN = 'admin';
+    const ROLE_SUPER_ADMIN = 'superAdmin';
+
     use Notifiable;
 
     /**
@@ -37,6 +43,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
     /**
      * @param $role
      * @return bool
@@ -44,5 +51,34 @@ class User extends Authenticatable
     public function hasRole($role)
     {
         return $this->userRole == $role;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getUserRoles()
+    {
+        return [
+          'user' => self::ROLE_USER,
+          'admin' => self::ROLE_ADMIN,
+          'superAdmin' => self::ROLE_SUPER_ADMIN,
+        ];
+    }
+
+    /**
+     * @return RedirectResponse
+     * @throws UnknownRoleException
+     */
+    public function redirectByUserRole()
+    {
+        $userRole = $this->userRole;
+        $allUserRoles = $this->getUserRoles();
+
+        if (in_array($userRole, $allUserRoles)) {
+
+            return redirect()->route($userRole . 'Page');
+        }
+
+        throw new UnknownRoleException('Provided user role does not exist');
     }
 }

@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Session;
  */
 class RegistrationController extends Controller
 {
+    const DEFAULT_ERROR_RESPONSE_MESSAGE = 'Cannot create new account. Please try again later';
+
     /**
      * @return Factory|\Illuminate\View\View
      */
@@ -24,7 +26,7 @@ class RegistrationController extends Controller
     }
     /**
      * @param RegistrationRequest $request
-     * @return bool
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function registration(RegistrationRequest $request)
     {
@@ -36,13 +38,12 @@ class RegistrationController extends Controller
             'dateOfBirth' => $request->dateOfBirth
         ]);
         if (!$newUser) {
-            Session::flash('fail', 'Cannot create new account. Please try again later');
+            Session::flash('fail', self::DEFAULT_ERROR_RESPONSE_MESSAGE);
 
             return redirect()->route('start');
         }
-
         Auth::loginUsingid($newUser->id);
 
-        return redirect()->route('mainPage');
+        return redirect()->route('userPage');
     }
 }

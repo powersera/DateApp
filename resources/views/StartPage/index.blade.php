@@ -20,7 +20,7 @@
                     @auth
                             <div class="col-sm-4 header-center-block">
                                 <h2>You are already logged</h2>
-                                <h2><a href="{{route('mainPage')}}">Go for dating</a></h2>
+                                <h2><a href="{{route('userPage')}}">Go for dating</a></h2>
                             </div>
                     @endauth
             </div>

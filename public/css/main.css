@@ -3,6 +3,10 @@ a:hover {
     text-decoration: none;
 }
 
+body {
+    height: 100%;
+    background-color: #F7F7F7;
+}
 
 .menu-item {
     margin: 0 2vw;
@@ -96,3 +100,14 @@ a:hover {
 .date {
     cursor: pointer;
 }
+
+.table-users-admin {
+    margin-top: 10vh;
+}
+
+.table-users-admin-wrapper {
+    border-style:ridge;
+    border-width: 3px;
+    background-color: white;
+}
+

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->date('dateOfBirth');
-            $table->enum('userRole', ['user', 'admin'])->default('user');
+            $table->enum('userRole', ['user', 'admin', 'superAdmin'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

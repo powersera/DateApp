@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -12,11 +13,12 @@ use Illuminate\View\View;
 class MainPageController extends Controller
 {
     /**
-     * @return \Illuminate\Contracts\View\Factory|View
+     * @return Factory|View
      */
     public function index()
     {
         return view('mainPage.index',
-            [ 'user' => Auth::user()]);
+            ['user' => Auth::user()]
+        );
     }
 }
