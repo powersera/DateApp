@@ -55,7 +55,7 @@ body {
 
 .header-screen-wrapper {
     background-position: center 0;
-    background-image: url('../Images/main-image.jpeg');
+    background-image: url('/public/images/main-image.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 88.5vh;
@@ -98,7 +98,8 @@ body {
 }
 
 .date {
-    cursor: pointer;
+    cursor: pointer!important;
+    background-color: white!important;
 }
 
 .table-users-admin {

@@ -27,6 +27,10 @@
                 showOn: "focus",
                 buttonText: "Select date",
                 locale: "en",
+                changeYear: true,
+                yearRange: "-100:+0",
+                changeMonth: true,
+                maxDate: "+0D",
             });
         });
     </script>

@@ -27,7 +27,8 @@
 </div>
 
 <div class="form-group form-field">
-    {{ Form::text('dateOfBirth', null, array_merge(['class' => 'form-control date'], ['placeholder' => 'date of birth'])) }}
+    {{ Form::text('dateOfBirth', null, array_merge(['class' => 'form-control date'],
+    ['placeholder' => 'date of birth', 'autocomplete' => 'off', 'readonly'])) }}
 </div>
 <div class="col-sm-12 form-field">
     <h6 class="validation-error">{{$errors->first('dateOfBirth')}}</h6>

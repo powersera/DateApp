@@ -10,7 +10,7 @@
             </div>
             @if ($user->hasRole('superAdmin'))
             <div class="col-sm-6">
-                    <h2><a href="{{route('superAdminPage')}}">Admin Page</a></h2>
+                    <h2><a href="{{route('superAdminPage')}}">Super Admin Page</a></h2>
             </div>
             @endif
 
